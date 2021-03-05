@@ -19,18 +19,21 @@ import com.google.android.exoplayer2.util.Util;
 public class MainActivity extends AppCompatActivity {
     SimpleExoPlayer player;
     PlayerView playerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
     private void inisialisasi() {
-        //        MediaItem mediaItem = MediaItem.fromUri(hlsUri);
 //        String alamathlsmqhtv = "http://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel.ism/.m3u8";
-//        String alamathlsmqhtv = "192.168.100.14:8080/hls/mqhtv.m3u8";
-        String alamathlsmqhtv = "http://192.168.1.9/hls/mqhtv.m3u8";
+//        String alamathlsmqhtv = "192.168.100.14/hls/mqhtv.m3u8";
+//        String alamathlsmqhtv = "http://192.168.1.9/hls/mqhtv.m3u8";
+//        String alamathlsmqhtv = "http://127.0.0.1:8080/hls/mqhtv.m3u8";
+//        String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
+//        String alamathlsmqhtv = "http://192.168.100.63/hls/mqhtv.m3u8";
+        String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
 
         DataSource.Factory dataSourceFactory = new DefaultHttpDataSource.Factory();
         HlsMediaSource hlsMediaSource = new HlsMediaSource.Factory(dataSourceFactory).createMediaSource(MediaItem.fromUri(alamathlsmqhtv));
