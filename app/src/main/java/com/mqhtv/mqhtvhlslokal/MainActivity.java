@@ -61,37 +61,43 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        if (Util.SDK_INT >= 24) {
+//        if (Util.SDK_INT >= 24) {
             inisialisasi();
-        }
+//        }
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-        hideSystemUi();
-        if ((Util.SDK_INT < 24 || player == null)) {
-            inisialisasi();
-        }
-    }
-
-
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        if (Util.SDK_INT < 24) {
-            player.release();
-            player = null;
-        }
-    }
-
-    @Override
-    public void onStop() {
+    protected void onStop() {
         super.onStop();
-        if (Util.SDK_INT >= 24) {
-            player.release();
-            player = null;
-        }
+        player.release();
     }
+
+    //    @Override
+//    public void onResume() {
+//        super.onResume();
+//        hideSystemUi();
+//        if ((Util.SDK_INT < 24 || player == null)) {
+//            inisialisasi();
+//        }
+//    }
+//
+//
+//
+//    @Override
+//    public void onPause() {
+//        super.onPause();
+//        if (Util.SDK_INT < 24) {
+//            player.release();
+//            player = null;
+//        }
+//    }
+//
+//    @Override
+//    public void onStop() {
+//        super.onStop();
+//        if (Util.SDK_INT >= 24) {
+//            player.release();
+//            player = null;
+//        }
+//    }
 }
