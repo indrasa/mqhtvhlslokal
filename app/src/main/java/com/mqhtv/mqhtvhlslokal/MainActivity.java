@@ -42,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
 //        String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
 //        String alamathlsmqhtv = "http://192.168.100.63:8080/hls/mqhtv.m3u8";
 //        String alamathlsmqhtv = "http://165.232.170.60:8080/hls/mqhtv.m3u8";
-        String alamathlsmqhtv = "http://amssamples.streaming.mediaservices.windows.net/69fbaeba-8e92-4740-aedc-ce09ae945073/AzurePromo.ism/manifest(format=m3u8-aapl)";
+//        String alamathlsmqhtv = "http://amssamples.streaming.mediaservices.windows.net/69fbaeba-8e92-4740-aedc-ce09ae945073/AzurePromo.ism/manifest(format=m3u8-aapl)";
+        String alamathlsmqhtv = "http://serversg2.mqhtv.com:8080/hls/mqhtv.m3u8";
 
         DataSource.Factory dataSourceFactory = new DefaultHttpDataSource.Factory();
         HlsMediaSource hlsMediaSource = new HlsMediaSource.Factory(dataSourceFactory).createMediaSource(MediaItem.fromUri(alamathlsmqhtv));
