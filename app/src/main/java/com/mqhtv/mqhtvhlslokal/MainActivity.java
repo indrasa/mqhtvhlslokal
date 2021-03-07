@@ -73,6 +73,13 @@ public class MainActivity extends AppCompatActivity {
                 inisialisasi();
             }
         }
+
+        @Override
+        public void onPlayerError(ExoPlaybackException error) {
+            player.release();
+            player = null;
+            inisialisasi();
+        }
     }
 
 
@@ -101,14 +108,14 @@ public class MainActivity extends AppCompatActivity {
 //        player.release();
 //    }
 
-        @Override
-    public void onResume() {
-        super.onResume();
-//        hideSystemUi();
-        if ((Util.SDK_INT < 24 || player == null)) {
-            inisialisasi();
-        }
-    }
+//        @Override
+//    public void onResume() {
+//        super.onResume();
+////        hideSystemUi();
+//        if ((Util.SDK_INT < 24 || player == null)) {
+//            inisialisasi();
+//        }
+//    }
 
 
 
