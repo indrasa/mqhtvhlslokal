@@ -8,14 +8,19 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.source.hls.HlsMediaSource;
 import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.exoplayer2.upstream.DataSource;
+import com.google.android.exoplayer2.upstream.DataSpec;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSource;
+import com.google.android.exoplayer2.upstream.HttpDataSource;
 import com.google.android.exoplayer2.util.Util;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
     SimpleExoPlayer player;
@@ -33,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
 //        String alamathlsmqhtv = "http://192.168.1.9/hls/mqhtv.m3u8";
 //        String alamathlsmqhtv = "http://127.0.0.1:8080/hls/mqhtv.m3u8";
 //        String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
-//        String alamathlsmqhtv = "http://192.168.100.63/hls/mqhtv.m3u8";
-//        String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
-        String alamathlsmqhtv = "http://192.168.100.63:8080/hls/mqhtv.m3u8";
+//        String alamathlsmqhtv = "http://192.168.100.63/hls/mqhtv.m3u8";A
+        String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
+//        String alamathlsmqhtv = "http://192.168.100.63:8080/hls/mqhtv.m3u8";
 
         DataSource.Factory dataSourceFactory = new DefaultHttpDataSource.Factory();
         HlsMediaSource hlsMediaSource = new HlsMediaSource.Factory(dataSourceFactory).createMediaSource(MediaItem.fromUri(alamathlsmqhtv));
@@ -46,12 +51,19 @@ public class MainActivity extends AppCompatActivity {
 
         player.setMediaSource(hlsMediaSource);
 
+//        player.addListener(PendengarKejadian);
+
         player.setPlayWhenReady(true);
-        player.setRepeatMode(Player.REPEAT_MODE_ALL);
+//        player.setRepeatMode(Player.REPEAT_MODE_ALL);
 
         player.prepare();
         player.play();
+
+
     }
+
+//    private class PendengarKejadian
+
 
 //    @SuppressLint("InlinedApi")
 //    private void hideSystemUi() {
