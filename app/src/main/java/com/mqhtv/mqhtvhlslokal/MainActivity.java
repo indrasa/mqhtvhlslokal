@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.google.android.exoplayer2.MediaItem;
+import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.source.hls.HlsMediaSource;
 import com.google.android.exoplayer2.ui.PlayerView;
@@ -33,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
 //        String alamathlsmqhtv = "http://127.0.0.1:8080/hls/mqhtv.m3u8";
 //        String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
 //        String alamathlsmqhtv = "http://192.168.100.63/hls/mqhtv.m3u8";
-        String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
+//        String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
+        String alamathlsmqhtv = "http://192.168.100.63:8080/hls/mqhtv.m3u8";
 
         DataSource.Factory dataSourceFactory = new DefaultHttpDataSource.Factory();
         HlsMediaSource hlsMediaSource = new HlsMediaSource.Factory(dataSourceFactory).createMediaSource(MediaItem.fromUri(alamathlsmqhtv));
@@ -43,7 +45,10 @@ public class MainActivity extends AppCompatActivity {
         playerView.setPlayer(player);
 
         player.setMediaSource(hlsMediaSource);
+
         player.setPlayWhenReady(true);
+        player.setRepeatMode(Player.REPEAT_MODE_ALL);
+
         player.prepare();
         player.play();
     }
