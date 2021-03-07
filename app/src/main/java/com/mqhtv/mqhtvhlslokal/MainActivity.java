@@ -39,8 +39,10 @@ public class MainActivity extends AppCompatActivity {
 //        String alamathlsmqhtv = "http://127.0.0.1:8080/hls/mqhtv.m3u8";
 //        String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
 //        String alamathlsmqhtv = "http://192.168.100.63/hls/mqhtv.m3u8";A
-        String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
+//        String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
 //        String alamathlsmqhtv = "http://192.168.100.63:8080/hls/mqhtv.m3u8";
+//        String alamathlsmqhtv = "http://165.232.170.60:8080/hls/mqhtv.m3u8";
+        String alamathlsmqhtv = "http://amssamples.streaming.mediaservices.windows.net/69fbaeba-8e92-4740-aedc-ce09ae945073/AzurePromo.ism/manifest(format=m3u8-aapl)";
 
         DataSource.Factory dataSourceFactory = new DefaultHttpDataSource.Factory();
         HlsMediaSource hlsMediaSource = new HlsMediaSource.Factory(dataSourceFactory).createMediaSource(MediaItem.fromUri(alamathlsmqhtv));
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         player.setMediaSource(hlsMediaSource);
 
-//        player.addListener(PendengarKejadian);
+        player.addListener(new PendengarKejadian());
 
         player.setPlayWhenReady(true);
 //        player.setRepeatMode(Player.REPEAT_MODE_ALL);
@@ -62,7 +64,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    private class PendengarKejadian
+    private class PendengarKejadian implements Player.EventListener{
+        @Override
+        public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
+            if (playbackState == Player.STATE_ENDED){
+                player.release();
+                player = null;
+                inisialisasi();
+            }
+        }
+    }
 
 
 //    @SuppressLint("InlinedApi")
