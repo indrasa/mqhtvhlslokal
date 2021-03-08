@@ -33,19 +33,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void inisialisasi() {
-//        String alamathlsmqhtv = "http://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel.ism/.m3u8";
-//        String alamathlsmqhtv = "192.168.100.14/hls/mqhtv.m3u8";
-//        String alamathlsmqhtv = "http://192.168.1.9/hls/mqhtv.m3u8";
-//        String alamathlsmqhtv = "http://127.0.0.1:8080/hls/mqhtv.m3u8";
         String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
-//        String alamathlsmqhtv = "http://192.168.100.63:8080/hls/mqhtv.m3u8";
-//        String alamathlsmqhtv = "http://192.168.100.63/hls/mqhtv.m3u8";A
-//        String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
-//        String alamathlsmqhtv = "http://192.168.100.63:8080/hls/mqhtv.m3u8";
-//        String alamathlsmqhtv = "http://165.232.170.60:8080/hls/mqhtv.m3u8";
-//        String alamathlsmqhtv = "http://amssamples.streaming.mediaservices.windows.net/69fbaeba-8e92-4740-aedc-ce09ae945073/AzurePromo.ism/manifest(format=m3u8-aapl)";
-        //
-//        String alamathlsmqhtv = "http://serversg2.mqhtv.com:8080/hls/mqhtv.m3u8";
 
         DataSource.Factory dataSourceFactory = new DefaultHttpDataSource.Factory();
         HlsMediaSource hlsMediaSource = new HlsMediaSource.Factory(dataSourceFactory).createMediaSource(MediaItem.fromUri(alamathlsmqhtv));
@@ -63,8 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
         player.prepare();
         player.play();
-
-
     }
 
     private class PendengarKejadian implements Player.EventListener{
@@ -85,17 +71,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-//    @SuppressLint("InlinedApi")
-//    private void hideSystemUi() {
-//        playerView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
-//                | View.SYSTEM_UI_FLAG_FULLSCREEN
-//                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-//                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-//                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-//                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-//    }
-
     @Override
     public void onStart() {
         super.onStart();
@@ -104,23 +79,6 @@ public class MainActivity extends AppCompatActivity {
             inisialisasi();
 //        }
     }
-
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        player.release();
-//    }
-
-//        @Override
-//    public void onResume() {
-//        super.onResume();
-////        hideSystemUi();
-//        if ((Util.SDK_INT < 24 || player == null)) {
-//            inisialisasi();
-//        }
-//    }
-
-
 
     @Override
     public void onPause() {
