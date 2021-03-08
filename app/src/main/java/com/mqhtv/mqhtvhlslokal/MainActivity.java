@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
 //        String alamathlsmqhtv = "192.168.100.14/hls/mqhtv.m3u8";
 //        String alamathlsmqhtv = "http://192.168.1.9/hls/mqhtv.m3u8";
 //        String alamathlsmqhtv = "http://127.0.0.1:8080/hls/mqhtv.m3u8";
-//        String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
-        String alamathlsmqhtv = "http://192.168.100.63:8080/hls/mqhtv.m3u8";
+        String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
+//        String alamathlsmqhtv = "http://192.168.100.63:8080/hls/mqhtv.m3u8";
 //        String alamathlsmqhtv = "http://192.168.100.63/hls/mqhtv.m3u8";A
 //        String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
 //        String alamathlsmqhtv = "http://192.168.100.63:8080/hls/mqhtv.m3u8";
