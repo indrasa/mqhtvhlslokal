@@ -33,8 +33,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void inisialisasi() {
-        String alamathlsmqhtv = "http://192.168.100.14:8080/hls/mqhtv.m3u8";
-
+//        String alamathlsmqhtv = "http://192.168.101.246:8080/hls/tvkabel.m3u8";
+        String alamathlsmqhtv = "https://stream.mqhtv.cloud/hls/tv_kabel.m3u8";
+//        String alamathlsmqhtv = "http://192.168.101.246:8080/hls/mqhtv.m3u8";
+//        rtmp://192.168.101.246:1935
         DataSource.Factory dataSourceFactory = new DefaultHttpDataSource.Factory();
         HlsMediaSource hlsMediaSource = new HlsMediaSource.Factory(dataSourceFactory).createMediaSource(MediaItem.fromUri(alamathlsmqhtv));
 
